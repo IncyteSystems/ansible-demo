@@ -1,0 +1,10 @@
+---
+- name: Simple Example
+  hosts: all
+  sudo: false
+  tasks:
+    - name: Example module
+      action: my_module
+      register: module_out
+
+    - debug: var=module_out['message']

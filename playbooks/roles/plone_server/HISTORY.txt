@@ -1,0 +1,53 @@
+1.0b8 unreleased
+
+- Correct the check for existance of buildout tarball download
+  [rockfruit]
+
+- Re-running role does re-run "Run buildout" correctly
+  [zylinx]
+
+- Make more complex specifications of base ports possible.
+  [rockfruit]
+
+- Add ability to set extension profiles for site creation.
+  [rockfruit]
+
+1.0b7 2015-01-27
+
+- There is a zope package that has some files that are not world-readable.
+  Fix generally by making sure the whole buildout cache is readable.
+  [smcmahon]
+
+- Not working with versions other than dist. Fixed.
+  [smcmahon]
+
+- If there was no buildout cache available, this failed. Fixed.
+  [smcmahon]
+
+- client web ports for clients > 1 were not enumerated correctly.
+  [smcmahon]
+
+- plone_zeo_port was not being respected in client parts. (Thanks, rockfruit)
+  [smcmahon]
+
+- Fix syntax error in restart_clients.sh script.
+
+1.0b6 2014-12-17
+
+- Update bootstrap.py to a version that allows pinning of setuptools; Pin it to 8.0.4.
+
+1.0b5 2014-12-08
+
+- Refactor to remove develop.cfg and base.cfg.
+
+- Add ability to specify mr.developer sources.
+
+- Added extra variables for zcml slugs, client extras and client1 extras.
+
+- Refactored the client implementation in buildout to allow for separate handling
+  of client1 and the remaining clients. This should allow for single client options
+  like webdav and ftp.
+
+1.0b4 2014-12-02
+
+- First really practical release.

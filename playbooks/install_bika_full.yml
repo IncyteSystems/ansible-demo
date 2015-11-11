@@ -1,0 +1,6 @@
+---
+- name: Bika Setup
+  hosts: all
+  sudo: true
+  roles:
+    - bika

@@ -1,0 +1,43 @@
+---
+# bika.ansible-playbook requires server_name for nginx and varnsih configuration
+
+server_name:              demolive.bikatraining.limelyte.com
+server_is_default:        True
+
+# The location of ssl certificates is required before any login can
+# take place.  At any rate, the nginx-site.conf.j2 file requires https to
+# be enabled!  These are the defaults installed by ssl-certs package.
+ssl_certificate:          /etc/ssl/certs/ssl-cert-snakeoil.pem
+ssl_certificate_key:      /etc/ssl/private/ssl-cert-snakeoil.key
+
+# The rest of these are parameters from plone/ansible.plone_server.
+
+#plone_instance_name:      zeoserver
+
+
+# Special plone site ID because we have imported data from the previous system
+#plone_site_id:            Health
+
+#plone_cron_prefix:        "{{ plone_instance_name }}"
+#supervisor_instance_name: "{{ plone_instance_name }}"
+
+plone_initial_password:   testme
+
+#plone_zeo_port:           "8081"
+#plone_client_base_port:   "8085"
+
+
+#plone_client_max_memory:  750MB
+
+plone_additional_eggs:
+    - bika.lims
+    - graphite.theme
+
+#plone_sources: ~
+
+
+# plone_extension_profiles, for example:
+#    - bika.health:default
+#    - bika.lims:default
+plone_extension_profiles:
+    - bika.lims:default
